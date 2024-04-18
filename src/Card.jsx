@@ -75,8 +75,13 @@ const BirthdayCard = () => {
     const [isClicked, setIsClicked] = useState(false);
 
     const handleClick = () => {
-        setIsClicked(true);
-        setCurrentPage(currentPage === pages.length - 1 ? 0 : currentPage + 1);
+        if (currentPage === pages.length - 1) {
+            setCurrentPage(0);
+            setIsClicked(false);
+        } else {
+            setIsClicked(true);
+            setCurrentPage(currentPage + 1);
+        }
     };
 
     return (
@@ -101,6 +106,7 @@ const BirthdayCard = () => {
                 {currentPage === 6 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 7 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 8 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
+                {currentPage === 9 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {pages[currentPage].foot && <p className="name">{pages[currentPage].foot}</p>}
             </div>
         </div>
