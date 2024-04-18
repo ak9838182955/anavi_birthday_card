@@ -16,6 +16,11 @@ const BirthdayCard = () => {
           foot: "Akash"
         },
         {
+            title: "Happy Birthday Cute Bhanji",
+            content: "To my sweet niece on her 1st birthday: You've brought so much happiness into our lives. Here's to many more years of love and laughter.",
+            foot: "Akash"
+          },
+        {
             title: "",
             content: "",
             image: firstpage,
@@ -67,13 +72,15 @@ const BirthdayCard = () => {
     ];
 
     const [currentPage, setCurrentPage] = useState(0);
+    const [isClicked, setIsClicked] = useState(false);
 
     const handleClick = () => {
+        setIsClicked(true);
         setCurrentPage(currentPage === pages.length - 1 ? 0 : currentPage + 1);
     };
 
     return (
-        <div className="birthdayCard" onClick={handleClick}>
+        <div  className={`birthdayCard ${isClicked ? 'clicked' : ''}`}  onClick={handleClick}>
             <div className="cardFront">
                 <h3 className="happy">HAPPY BIRTHDAY Anvi!</h3>
                 <div className="balloons">
@@ -87,13 +94,13 @@ const BirthdayCard = () => {
             {pages[currentPage].title && <h3 className="back">{pages[currentPage].title}</h3>}
             
                 <p>{pages[currentPage].content}</p>
-                {currentPage === 1 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 2 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 3 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 4 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 5 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 6 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 7 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
+                {currentPage === 8 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {pages[currentPage].foot && <p className="name">{pages[currentPage].foot}</p>}
             </div>
         </div>

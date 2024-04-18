@@ -16,19 +16,21 @@ body {
     transition: 1s;
   }
   
-  .birthdayCard:hover {
+  .birthdayCard.clicked {
     transform: perspective(2500px) rotate(5deg);
-    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
-      0 10px 100px rgba(0, 0, 0, 0.5);
-  }
-  
-  .birthdayCard:hover .cardFront {
+}
+
+.birthdayCard.clicked .cardFront {
     transform: rotateY(-160deg);
-  }
-  
+}
+
+.birthdayCard.clicked .happy {
+    visibility: hidden;
+}
+/*   
   .birthdayCard:hover .happy {
     visibility: hidden;
-  }
+  } */
   
   .cardFront {
     position: relative;
