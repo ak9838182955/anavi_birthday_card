@@ -37,6 +37,7 @@ const BirthdayCard = () => {
                 <p>{pages[currentPage].content}</p>
                 {currentPage === 1 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {currentPage === 2 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
+                {currentPage === 2 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 <p className="name">Akash</p>
             </div>
         </div>
