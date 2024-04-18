@@ -6,6 +6,7 @@ import fourth from './fourth.jpeg';
 import fifth from './fifth.jpeg';
 import six from './six.jpeg';
 import seven from './seven.jpeg';
+import birthdayAudio from './birthday.mp3';
 
 
 const BirthdayCard = () => {
@@ -73,7 +74,7 @@ const BirthdayCard = () => {
 
     const [currentPage, setCurrentPage] = useState(0);
     const [isClicked, setIsClicked] = useState(false);
-
+    const audioRef = React.createRef(); // Ref for the audio element
     const handleClick = () => {
         if (currentPage === pages.length - 1) {
             setCurrentPage(0);
@@ -82,6 +83,7 @@ const BirthdayCard = () => {
             setIsClicked(true);
             setCurrentPage(currentPage + 1);
         }
+        audioRef.current.play();
     };
 
     return (
@@ -109,7 +111,9 @@ const BirthdayCard = () => {
                 {currentPage === 9 && <img src={pages[currentPage].image} alt="Niece's 1st birthday" />}
                 {pages[currentPage].foot && <p className="name">{pages[currentPage].foot}</p>}
             </div>
+            <audio ref={audioRef} src={birthdayAudio} />
         </div>
+        
     );
 };
 
